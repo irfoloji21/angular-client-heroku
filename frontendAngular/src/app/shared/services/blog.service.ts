@@ -11,40 +11,40 @@ export class BlogService {
   constructor(private http: HttpClient) { }
 
   getBlogs(): Observable<any> {
-    return this.http.get<any>(`/get-all-blogs`);
+    return this.http.get<any>(`${this.apiUrl}/get-all-blogs`);
   }
 
   getBlogDetails(slug: string): Observable<any> {
-    return this.http.get<any>(`/${slug}`);
+    return this.http.get<any>(`${this.apiUrl}/${slug}`);
   }
 
   createBlog(blogData: any): Observable<any> {
-    return this.http.post<any>(`/create-blog`, blogData);
+    return this.http.post<any>(`${this.apiUrl}/create-blog`, blogData);
   }
 
   getAllShopBlogs(shopId: string): Observable<any> {
-    return this.http.get<any>(`/get-all-blogs-shop/${shopId}`);
+    return this.http.get<any>(`${this.apiUrl}/get-all-blogs-shop/${shopId}`);
   }
 
   deleteBlog(blogId: string): Observable<any> {
-    return this.http.delete<any>(`/delete-shop-blog/${blogId}`);
+    return this.http.delete<any>(`${this.apiUrl}/delete-shop-blog/${blogId}`);
   }
 
   createReview(reviewData: any): Observable<any> {
-    return this.http.put<any>(`/create-new-review`, reviewData);
+    return this.http.put<any>(`${this.apiUrl}/create-new-review`, reviewData);
   }
 
   getAdminBlogs(): Observable<any> {
-    return this.http.get<any>(`/admin-all-blogs`);
+    return this.http.get<any>(`${this.apiUrl}/admin-all-blogs`);
   }
 
   likeBlog(blogId: string, user: any): Observable<any> {
-    const url = `/like-blog/${blogId}`;
+    const url = `${this.apiUrl}/like-blog/${blogId}`;
     return this.http.put<any>(url, { user });
   }
 
   unlikeBlog(blogId: string, user: any): Observable<any> {
-    const url = `/unlike-blog/${blogId}`;
+    const url = `${this.apiUrl}/unlike-blog/${blogId}`;
     return this.http.put<any>(url, { user });
   }
   

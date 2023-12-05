@@ -68,18 +68,18 @@ export class OrderService {
   }
 
   public getOrders(userId: string): Observable<any> {
-    const url = `/order/get-all-orders/${userId}`;
+    const url = `${this.apiUrl}/order/get-all-orders/${userId}`;
     return this.http.get(url);
   }
 
   public getOrderDetails(orderId: string): Observable<any> {
-    const url = `/order/order-details/${orderId}`;
+    const url = `${this.apiUrl}/order/order-details/${orderId}`;
     return this.http.get(url);
   }
 
   public refundOrder(orderId: string): Observable<any> {
     const refundData = { status: 'Refund Success' }; // İade başarılı olduğunda gönderilen durum
-    return this.http.put<any>(`/order/order-refund-success/${orderId}`, refundData);
+    return this.http.put<any>(`${this.apiUrl}/order/order-refund-success/${orderId}`, refundData);
   }
 
   setSelectedAddress(address: any) {

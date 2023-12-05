@@ -85,7 +85,7 @@ __webpack_require__.r(__webpack_exports__);
 class CouponService {
   constructor(http) {
     this.http = http;
-    this.baseUrl = 'http://localhost:8000/api/v2';
+    this.baseUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com';
     this.appliedCouponSubject = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject(null);
     this.appliedCoupon$ = this.appliedCouponSubject.asObservable();
   }

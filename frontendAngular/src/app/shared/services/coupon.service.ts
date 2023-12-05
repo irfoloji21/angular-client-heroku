@@ -8,7 +8,7 @@ import { CouponCode } from '../classes/coupon';
 })
 export class CouponService {
 
-  private baseUrl = 'http://localhost:8000/api/v2'; 
+  private baseUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com'; 
 
   constructor(private http: HttpClient) {}
 

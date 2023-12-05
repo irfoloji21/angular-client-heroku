@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:8000/api/v2';
+  private apiUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com';
   private userId: string | null = null;
   private user: any;
   private isLoggedInSubject = new BehaviorSubject<boolean>(false);
@@ -24,7 +24,7 @@ export class AuthService {
   login(email: string, password: string): Observable<any> {
     const body = { email, password };
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post<any>(`/user/login-user`, body, { headers, withCredentials: true })
+    return this.http.post<any>(`${this.apiUrl}/user/login-user`, body, { headers, withCredentials: true })
       .pipe(tap(user => {
         if (user.success) {
           localStorage.setItem('isLoggedIn', 'true');
@@ -38,7 +38,7 @@ export class AuthService {
   updateUserAddress(userId: string, addressData: any) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.put<any>(
-      `/user/update-user-addresses/${userId}`,
+      `${this.apiUrl}/user/update-user-addresses/${userId}`,
       addressData,
       { headers, withCredentials: true }
     );
@@ -46,7 +46,7 @@ export class AuthService {
   
   deleteUserAddress(addressId: string): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.delete<any>(`/user/delete-user-address/${addressId}`, { headers, withCredentials: true });
+    return this.http.delete<any>(`${this.apiUrl}/user/delete-user-address/${addressId}`, { headers, withCredentials: true });
   }
 
   logout(): void {
@@ -58,7 +58,7 @@ export class AuthService {
   register(firstName: string, lastName: string, email: string, password: string): Observable<any> {
     const data = { firstName, lastName, email, password };
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post<any>(`/user/create-user`, data, { headers, withCredentials: true })
+    return this.http.post<any>(`${this.apiUrl}/user/create-user`, data, { headers, withCredentials: true })
       .pipe(tap(user => this.user = user));
   }
 
@@ -74,7 +74,7 @@ export class AuthService {
 
   loadUser(): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get<any>(`/user/getuser`, { headers, withCredentials: true });
+    return this.http.get<any>(`${this.apiUrl}/user/getuser`, { headers, withCredentials: true });
   }
 
   async initUser(): Promise<void> {
@@ -96,18 +96,18 @@ export class AuthService {
   }
 
   activateUser(activation_token: string): Observable<any> {
-    return this.http.post(`/user/activation`, { activation_token });
+    return this.http.post(`${this.apiUrl}/user/activation`, { activation_token });
   }
 
   updateUserPassword(oldPassword: string, newPassword: string, confirmPassword: string) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.put(`/user/update-user-password`, { oldPassword, newPassword, confirmPassword }, { headers, withCredentials: true });
+    return this.http.put(`${this.apiUrl}/user/update-user-password`, { oldPassword, newPassword, confirmPassword }, { headers, withCredentials: true });
   }
 
   updateUser(userInfo: any, ): Observable<any> {
     // Kullanıcı bilgilerini güncellemek için API'ye istek gönder
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.put<any>(`/user/update-user-info`, userInfo, { headers, withCredentials: true });
+    return this.http.put<any>(`${this.apiUrl}/user/update-user-info`, userInfo, { headers, withCredentials: true });
   }
 }
 

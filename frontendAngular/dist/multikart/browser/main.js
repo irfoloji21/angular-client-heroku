@@ -6761,7 +6761,7 @@ __webpack_require__.r(__webpack_exports__);
 class AuthService {
   constructor(http) {
     this.http = http;
-    this.apiUrl = 'http://localhost:8000/api/v2';
+    this.apiUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com';
     this.userId = null;
     this.isLoggedInSubject = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject(false);
     this.isLoggedIn$ = this.isLoggedInSubject.asObservable();
@@ -6908,7 +6908,7 @@ __webpack_require__.r(__webpack_exports__);
 class CategoryService {
   constructor(http) {
     this.http = http;
-    this.apiUrl = 'http://localhost:8000/api/v2/category';
+    this.apiUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com';
     this.leftMenuToggle = false;
     this.mainMenuToggle = false;
   }

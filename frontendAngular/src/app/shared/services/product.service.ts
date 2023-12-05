@@ -37,7 +37,7 @@ export class ProductService {
 
   // // Product
   private get products(): Observable<Product[]> {
-    this.Products = this.http.get<Product[]>(`/product/get-all-products`).pipe(map(data => data));
+    this.Products = this.http.get<Product[]>(`${this.apiUrl}/product/get-all-products`).pipe(map(data => data));
     this.Products.subscribe(next => { localStorage['products'] = JSON.stringify(next) });
     return this.Products = this.Products.pipe(startWith(JSON.parse(localStorage['products'] || '[]')));
   }
@@ -49,13 +49,13 @@ export class ProductService {
 
    // Get Products By Slug
    public getProductBySlug(slug: string): Observable<Product> {
-    return this.http.get(`/product/${slug}`).pipe(map(data => data))
+    return this.http.get(`${this.apiUrl}/product/${slug}`).pipe(map(data => data))
   }
   //creaateNewReview
   createNewReview(comment: Comment): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const options = { headers, withCredentials: true };
-    return this.http.put(`/product/create-new-review`, comment, options);
+    return this.http.put(`${this.apiUrl}/product/create-new-review`, comment, options);
   }
 
   /*
@@ -375,11 +375,11 @@ export class ProductService {
 
 
   search(searchTerm: string): Observable<any[]> {
-    return this.http.get<any[]>(`/product/search/${searchTerm}`);
+    return this.http.get<any[]>(`${this.apiUrl}/product/search/${searchTerm}`);
     
   }
   irfan(id:any): Observable<any[]> {
-    return this.http.get<any[]>(`/product/get-products-by-category/${id}`);
+    return this.http.get<any[]>(`${this.apiUrl}/product/get-products-by-category/${id}`);
     
   }
 
