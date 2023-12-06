@@ -9,7 +9,7 @@ import { Category } from '../classes/category';
   providedIn: 'root'
 })
 export class CategoryService {
-  private apiUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com/category'; 
+  private apiUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com/api/v2/category'; 
 
   constructor(private http: HttpClient) { }
 

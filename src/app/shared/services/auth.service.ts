@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com';
+  private apiUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com/api/v2';
   private userId: string | null = null;
   private user: any;
   private isLoggedInSubject = new BehaviorSubject<boolean>(false);
