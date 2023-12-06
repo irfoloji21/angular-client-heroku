@@ -1478,7 +1478,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CartModalComponent: () => (/* binding */ CartModalComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 61699);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 26575);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ 76101);
@@ -1612,9 +1612,9 @@ class CartModalComponent {
   ngAfterViewInit() {}
   openModal(product) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       _this.productService.getProducts.subscribe( /*#__PURE__*/function () {
-        var _ref = (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
+        var _ref = (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* (response) {
           _this.products = yield response.filter(items => {
             items.category == product.category && items._id != product._id;
           });
@@ -2093,7 +2093,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   QuickViewComponent: () => (/* binding */ QuickViewComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 61699);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 26575);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ 76101);
@@ -2306,7 +2306,7 @@ class QuickViewComponent {
   // Add to cart
   addToCart(product) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this.counter || 1;
       const status = yield _this.productService.addToCart(product);
       if (status) _this.router.navigate(['/shop/cart']);
@@ -6748,7 +6748,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   AuthService: () => (/* binding */ AuthService)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 54860);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 58071);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 13738);
@@ -6777,7 +6777,7 @@ class AuthService {
       password
     };
     const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(`/user/login-user`, body, {
+    return this.http.post(`${this.apiUrl}/user/login-user`, body, {
       headers,
       withCredentials: true
     }).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_3__.tap)(user => {
@@ -6791,14 +6791,14 @@ class AuthService {
   }
   updateUserAddress(userId, addressData) {
     const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.put(`/user/update-user-addresses/${userId}`, addressData, {
+    return this.http.put(`${this.apiUrl}/user/update-user-addresses/${userId}`, addressData, {
       headers,
       withCredentials: true
     });
   }
   deleteUserAddress(addressId) {
     const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.delete(`/user/delete-user-address/${addressId}`, {
+    return this.http.delete(`${this.apiUrl}/user/delete-user-address/${addressId}`, {
       headers,
       withCredentials: true
     });
@@ -6816,7 +6816,7 @@ class AuthService {
       password
     };
     const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(`/user/create-user`, data, {
+    return this.http.post(`${this.apiUrl}/user/create-user`, data, {
       headers,
       withCredentials: true
     }).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_3__.tap)(user => this.user = user));
@@ -6831,14 +6831,14 @@ class AuthService {
   }
   loadUser() {
     const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get(`/user/getuser`, {
+    return this.http.get(`${this.apiUrl}/user/getuser`, {
       headers,
       withCredentials: true
     });
   }
   initUser() {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       try {
         const response = yield _this.loadUser().toPromise();
         _this.user = response.user;
@@ -6855,13 +6855,13 @@ class AuthService {
     return this.user;
   }
   activateUser(activation_token) {
-    return this.http.post(`/user/activation`, {
+    return this.http.post(`${this.apiUrl}/user/activation`, {
       activation_token
     });
   }
   updateUserPassword(oldPassword, newPassword, confirmPassword) {
     const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.put(`/user/update-user-password`, {
+    return this.http.put(`${this.apiUrl}/user/update-user-password`, {
       oldPassword,
       newPassword,
       confirmPassword
@@ -6873,7 +6873,7 @@ class AuthService {
   updateUser(userInfo) {
     // Kullanıcı bilgilerini güncellemek için API'ye istek gönder
     const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.put(`/user/update-user-info`, userInfo, {
+    return this.http.put(`${this.apiUrl}/user/update-user-info`, userInfo, {
       headers,
       withCredentials: true
     });
@@ -6908,7 +6908,7 @@ __webpack_require__.r(__webpack_exports__);
 class CategoryService {
   constructor(http) {
     this.http = http;
-    this.apiUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com';
+    this.apiUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com/category';
     this.leftMenuToggle = false;
     this.mainMenuToggle = false;
   }
@@ -6918,22 +6918,22 @@ class CategoryService {
   }
   // getCategory
   getCategories() {
-    return this.http.get(`/get-all-categories`);
+    return this.http.get(`${this.apiUrl}/get-all-categories`);
   }
   getCategoryById(id) {
-    return this.http.get(`/get-category/${id}`);
+    return this.http.get(`${this.apiUrl}/get-category/${id}`);
   }
   // createCategory
   createCategory(categoryData) {
-    return this.http.post(`/create-category`, categoryData);
+    return this.http.post(`${this.apiUrl}/create-category`, categoryData);
   }
   // updateCategory
   updateCategory(id, updatedData) {
-    return this.http.put(`/update-category/${id}`, updatedData);
+    return this.http.put(`${this.apiUrl}/update-category/${id}`, updatedData);
   }
   // deleteCategory
   deleteCategory(id) {
-    return this.http.delete(`/delete-category/${id}`);
+    return this.http.delete(`${this.apiUrl}/delete-category/${id}`);
   }
   static #_ = this.ɵfac = function CategoryService_Factory(t) {
     return new (t || CategoryService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient));
@@ -7165,7 +7165,7 @@ class ProductService {
   */
   // // Product
   get products() {
-    this.Products = this.http.get(`/product/get-all-products`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(data => data));
+    this.Products = this.http.get(`${this.apiUrl}/product/get-all-products`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(data => data));
     this.Products.subscribe(next => {
       localStorage['products'] = JSON.stringify(next);
     });
@@ -7177,7 +7177,7 @@ class ProductService {
   }
   // Get Products By Slug
   getProductBySlug(slug) {
-    return this.http.get(`/product/${slug}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(data => data));
+    return this.http.get(`${this.apiUrl}/product/${slug}`).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_1__.map)(data => data));
   }
   //creaateNewReview
   createNewReview(comment) {
@@ -7188,7 +7188,7 @@ class ProductService {
       headers,
       withCredentials: true
     };
-    return this.http.put(`/product/create-new-review`, comment, options);
+    return this.http.put(`${this.apiUrl}/product/create-new-review`, comment, options);
   }
   /*
     ---------------------------------------------
@@ -7467,10 +7467,10 @@ class ProductService {
     };
   }
   search(searchTerm) {
-    return this.http.get(`/product/search/${searchTerm}`);
+    return this.http.get(`${this.apiUrl}/product/search/${searchTerm}`);
   }
   irfan(id) {
-    return this.http.get(`/product/get-products-by-category/${id}`);
+    return this.http.get(`${this.apiUrl}/product/get-products-by-category/${id}`);
   }
   static #_ = this.ɵfac = function ProductService_Factory(t) {
     return new (t || ProductService)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](ngx_toastr__WEBPACK_IMPORTED_MODULE_6__.ToastrService));

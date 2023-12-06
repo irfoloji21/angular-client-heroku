@@ -21,34 +21,34 @@ class BlogService {
     this.apiUrl = 'http://localhost:8000/api/v2/blog';
   }
   getBlogs() {
-    return this.http.get(`/get-all-blogs`);
+    return this.http.get(`${this.apiUrl}/get-all-blogs`);
   }
   getBlogDetails(slug) {
-    return this.http.get(`/${slug}`);
+    return this.http.get(`${this.apiUrl}/${slug}`);
   }
   createBlog(blogData) {
-    return this.http.post(`/create-blog`, blogData);
+    return this.http.post(`${this.apiUrl}/create-blog`, blogData);
   }
   getAllShopBlogs(shopId) {
-    return this.http.get(`/get-all-blogs-shop/${shopId}`);
+    return this.http.get(`${this.apiUrl}/get-all-blogs-shop/${shopId}`);
   }
   deleteBlog(blogId) {
-    return this.http.delete(`/delete-shop-blog/${blogId}`);
+    return this.http.delete(`${this.apiUrl}/delete-shop-blog/${blogId}`);
   }
   createReview(reviewData) {
-    return this.http.put(`/create-new-review`, reviewData);
+    return this.http.put(`${this.apiUrl}/create-new-review`, reviewData);
   }
   getAdminBlogs() {
-    return this.http.get(`/admin-all-blogs`);
+    return this.http.get(`${this.apiUrl}/admin-all-blogs`);
   }
   likeBlog(blogId, user) {
-    const url = `/like-blog/${blogId}`;
+    const url = `${this.apiUrl}/like-blog/${blogId}`;
     return this.http.put(url, {
       user
     });
   }
   unlikeBlog(blogId, user) {
-    const url = `/unlike-blog/${blogId}`;
+    const url = `${this.apiUrl}/unlike-blog/${blogId}`;
     return this.http.put(url, {
       user
     });
@@ -185,18 +185,18 @@ class OrderService {
     }
   }
   getOrders(userId) {
-    const url = `/order/get-all-orders/${userId}`;
+    const url = `${this.apiUrl}/order/get-all-orders/${userId}`;
     return this.http.get(url);
   }
   getOrderDetails(orderId) {
-    const url = `/order/order-details/${orderId}`;
+    const url = `${this.apiUrl}/order/order-details/${orderId}`;
     return this.http.get(url);
   }
   refundOrder(orderId) {
     const refundData = {
       status: 'Refund Success'
     }; // İade başarılı olduğunda gönderilen durum
-    return this.http.put(`/order/order-refund-success/${orderId}`, refundData);
+    return this.http.put(`${this.apiUrl}/order/order-refund-success/${orderId}`, refundData);
   }
   setSelectedAddress(address) {
     this.selectedAddress = address;

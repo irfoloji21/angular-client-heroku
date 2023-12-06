@@ -102,7 +102,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Resolver: () => (/* binding */ Resolver)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 61699);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 27947);
 /* harmony import */ var _product_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product.service */ 97942);
@@ -120,7 +120,7 @@ class Resolver {
   // Resolver
   resolve(route) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       yield new Promise(resolve => setTimeout(resolve, 1000));
       return new Promise((resolve, reject) => {
         _this.productService.getProductBySlug(route.params.slug).subscribe(product => {
@@ -2136,7 +2136,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   PaymentComponent: () => (/* binding */ PaymentComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 28849);
 /* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ 20553);
 /* harmony import */ var stripe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! stripe */ 18118);
@@ -2207,7 +2207,7 @@ class PaymentComponent {
       const stripeApiKey = src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.stripe_token;
       const stripe = new stripe__WEBPACK_IMPORTED_MODULE_2__["default"](stripeApiKey);
       const tokenizeCard = /*#__PURE__*/function () {
-        var _ref = (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+        var _ref = (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
           try {
             _this.result = yield stripe.tokens.create({
               card: cardDetails
@@ -4798,7 +4798,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CompareComponent: () => (/* binding */ CompareComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 61699);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 27947);
 /* harmony import */ var _shared_services_product_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/services/product.service */ 97942);
@@ -4957,7 +4957,7 @@ class CompareComponent {
   ngOnInit() {}
   addToCart(product) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const status = yield _this.productService.addToCart(product);
       if (status) {
         _this.router.navigate(['/shop/cart']);
@@ -5011,7 +5011,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   BundleProductComponent: () => (/* binding */ BundleProductComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _shared_data_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/data/slider */ 32306);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 61699);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 27947);
@@ -5316,7 +5316,7 @@ class BundleProductComponent {
   // Add to cart
   addToCart(product) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this.counter || 1;
       const status = yield _this.productService.addToCart(product);
       if (status) _this.router.navigate(['/shop/cart']);
@@ -5325,7 +5325,7 @@ class BundleProductComponent {
   // Buy Now
   buyNow(product) {
     var _this2 = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this2.counter || 1;
       const status = yield _this2.productService.addToCart(product);
       if (status) _this2.router.navigate(['/shop/checkout']);
@@ -5566,7 +5566,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   FourImageComponent: () => (/* binding */ FourImageComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 61699);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 27947);
 /* harmony import */ var _shared_services_product_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/services/product.service */ 97942);
@@ -5806,7 +5806,7 @@ class FourImageComponent {
   // Add to cart
   addToCart(product) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this.counter || 1;
       const status = yield _this.productService.addToCart(product);
       if (status) _this.router.navigate(['/shop/cart']);
@@ -5815,7 +5815,7 @@ class FourImageComponent {
   // Buy Now
   buyNow(product) {
     var _this2 = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this2.counter || 1;
       const status = yield _this2.productService.addToCart(product);
       if (status) _this2.router.navigate(['/shop/checkout']);
@@ -6005,7 +6005,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ImageOutsideComponent: () => (/* binding */ ImageOutsideComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _shared_data_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/data/slider */ 32306);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 61699);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 27947);
@@ -6325,7 +6325,7 @@ class ImageOutsideComponent {
   // Add to cart
   addToCart(product) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this.counter || 1;
       const status = yield _this.productService.addToCart(product);
       if (status) _this.router.navigate(['/shop/cart']);
@@ -6334,7 +6334,7 @@ class ImageOutsideComponent {
   // Buy Now
   buyNow(product) {
     var _this2 = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this2.counter || 1;
       const status = yield _this2.productService.addToCart(product);
       if (status) _this2.router.navigate(['/shop/checkout']);
@@ -6536,7 +6536,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ProductLeftSidebarComponent: () => (/* binding */ ProductLeftSidebarComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _shared_data_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../shared/data/slider */ 32306);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ 28849);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 61699);
@@ -6979,7 +6979,7 @@ class ProductLeftSidebarComponent {
   // Add to cart
   addToCart(product) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this.counter || 1;
       const status = yield _this.productService.addToCart(product);
       if (status) _this.router.navigate(['/shop/cart']);
@@ -6988,7 +6988,7 @@ class ProductLeftSidebarComponent {
   // Buy Now
   buyNow(product) {
     var _this2 = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this2.counter || 1;
       const status = yield _this2.productService.addToCart(product);
       if (status) _this2.router.navigate(['/shop/checkout']);
@@ -7210,7 +7210,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ProductNoSidebarComponent: () => (/* binding */ ProductNoSidebarComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _shared_data_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../shared/data/slider */ 32306);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/core */ 61699);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ 27947);
@@ -7519,7 +7519,7 @@ class ProductNoSidebarComponent {
   // Add to cart
   addToCart(product) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this.counter || 1;
       const status = yield _this.productService.addToCart(product);
       if (status) _this.router.navigate(['/shop/cart']);
@@ -7528,7 +7528,7 @@ class ProductNoSidebarComponent {
   // Buy Now
   buyNow(product) {
     var _this2 = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this2.counter || 1;
       const status = yield _this2.productService.addToCart(product);
       if (status) _this2.router.navigate(['/shop/checkout']);
@@ -7736,7 +7736,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ProductRightSidebarComponent: () => (/* binding */ ProductRightSidebarComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _shared_data_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../shared/data/slider */ 32306);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/core */ 61699);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/router */ 27947);
@@ -8052,7 +8052,7 @@ class ProductRightSidebarComponent {
   // Add to cart
   addToCart(product) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this.counter || 1;
       const status = yield _this.productService.addToCart(product);
       if (status) _this.router.navigate(['/shop/cart']);
@@ -8061,7 +8061,7 @@ class ProductRightSidebarComponent {
   // Buy Now
   buyNow(product) {
     var _this2 = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this2.counter || 1;
       const status = yield _this2.productService.addToCart(product);
       if (status) _this2.router.navigate(['/shop/checkout']);
@@ -8299,7 +8299,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   ThreeColumnComponent: () => (/* binding */ ThreeColumnComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _shared_data_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/data/slider */ 32306);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 61699);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 27947);
@@ -8616,7 +8616,7 @@ class ThreeColumnComponent {
   // Add to cart
   addToCart(product) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this.counter || 1;
       const status = yield _this.productService.addToCart(product);
       if (status) _this.router.navigate(['/shop/cart']);
@@ -8625,7 +8625,7 @@ class ThreeColumnComponent {
   // Buy Now
   buyNow(product) {
     var _this2 = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       product.quantity = _this2.counter || 1;
       const status = yield _this2.productService.addToCart(product);
       if (status) _this2.router.navigate(['/shop/checkout']);
@@ -9526,7 +9526,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   WishlistComponent: () => (/* binding */ WishlistComponent)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 61699);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 27947);
 /* harmony import */ var _shared_services_product_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/services/product.service */ 97942);
@@ -9695,7 +9695,7 @@ class WishlistComponent {
   ngOnInit() {}
   addToCart(product) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const status = yield _this.productService.addToCart(product);
       if (status) {
         _this.router.navigate(['/shop/cart']);
@@ -16431,7 +16431,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   createWebhooks: () => (/* binding */ createWebhooks)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _Error_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Error.js */ 53672);
 /* harmony import */ var _crypto_CryptoProvider_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./crypto/CryptoProvider.js */ 7199);
 
@@ -16456,7 +16456,7 @@ function createWebhooks(platformFunctions) {
     },
     constructEventAsync(payload, header, secret, tolerance, cryptoProvider, receivedAt) {
       var _this = this;
-      return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
         yield _this.signature.verifyHeaderAsync(payload, header, secret, tolerance || Webhook.DEFAULT_TOLERANCE, cryptoProvider, receivedAt);
         const jsonPayload = payload instanceof Uint8Array ? JSON.parse(new TextDecoder('utf8').decode(payload)) : JSON.parse(payload);
         return jsonPayload;
@@ -16504,7 +16504,7 @@ function createWebhooks(platformFunctions) {
     },
     verifyHeaderAsync(encodedPayload, encodedHeader, secret, tolerance, cryptoProvider, receivedAt) {
       var _this2 = this;
-      return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+      return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
         const {
           decodedHeader: header,
           decodedPayload: payload,
@@ -16646,7 +16646,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   makeAutoPaginationMethods: () => (/* binding */ makeAutoPaginationMethods)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils.js */ 88244);
 
 
@@ -16663,7 +16663,7 @@ class StripeIterator {
   }
   iterate(pageResult) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       if (!(pageResult && pageResult.data && typeof pageResult.data.length === 'number')) {
         throw Error('Unexpected: Stripe API response does not have a well-formed `data` array.');
       }
@@ -16695,7 +16695,7 @@ class StripeIterator {
   }
   _next() {
     var _this2 = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       return _this2.iterate(yield _this2.pagePromise);
     })();
   }
@@ -16709,7 +16709,7 @@ class StripeIterator {
     if (this.promiseCache.currentPromise) {
       return this.promiseCache.currentPromise;
     }
-    const nextPromise = (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    const nextPromise = (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const ret = yield _this3._next();
       _this3.promiseCache.currentPromise = null;
       return ret;
@@ -16969,7 +16969,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   SubtleCryptoProvider: () => (/* binding */ SubtleCryptoProvider)
 /* harmony export */ });
-/* harmony import */ var C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
+/* harmony import */ var C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js */ 71670);
 /* harmony import */ var _CryptoProvider_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CryptoProvider.js */ 7199);
 
 
@@ -16993,7 +16993,7 @@ class SubtleCryptoProvider extends _CryptoProvider_js__WEBPACK_IMPORTED_MODULE_1
   /** @override */
   computeHMACSignatureAsync(payload, secret) {
     var _this = this;
-    return (0,C_Users_PC_Desktop_backend_frontendAngular_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
+    return (0,C_Users_PC_Desktop_deneme_node_modules_babel_runtime_helpers_esm_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_0__["default"])(function* () {
       const encoder = new TextEncoder();
       const key = yield _this.subtleCrypto.importKey('raw', encoder.encode(secret), {
         name: 'HMAC',

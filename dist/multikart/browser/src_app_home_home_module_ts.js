@@ -935,7 +935,7 @@ class KoleksiyonService {
     this.apiUrl = "http://localhost:8000/api/v2";
   }
   getKoleksiyons() {
-    return this.http.get(`/koleksiyon/koleksiyons`);
+    return this.http.get(`${this.apiUrl}/koleksiyon/koleksiyons`);
   }
   static #_ = this.ɵfac = function KoleksiyonService_Factory(t) {
     return new (t || KoleksiyonService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient));
