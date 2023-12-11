@@ -57,7 +57,9 @@
                   <small
                     class="text-info"
                     *ngIf="
-                      registerForm.get('password').hasError('passwordInvalid') &&
+                      registerForm
+                        .get('password')
+                        .hasError('passwordInvalid') &&
                       registerForm.get('password').touched
                     "
                   >
@@ -67,10 +69,13 @@
                   <br />
                   <small
                     class="text-danger"
-                    *ngIf="registerForm.get('password').hasError('minlength') && registerForm.get('password').touched"
+                    *ngIf="
+                      registerForm.get('password').hasError('minlength') &&
+                      registerForm.get('password').touched
+                    "
                   >
-                    Password must contain at least one uppercase letter. <br/>
-                    Password must contain at least one special character. 
+                    Password must contain at least one uppercase letter. <br />
+                    Password must contain at least one special character.
                   </small>
                 </div>
               </div>
