@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
 
   constructor(
@@ -40,11 +41,9 @@ export class LoginComponent implements OnInit {
       withCredentials: true,
     };
 
-
     this.authService.login(formData.email, formData.password)
       .subscribe(response => {
         if (response.success) {
-          console.log("success", response);
           this.authService.setUserId(response.user._id)
           this.toasts.success('Giriş başarılı', '',
             {

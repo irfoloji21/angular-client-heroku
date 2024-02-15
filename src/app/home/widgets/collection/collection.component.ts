@@ -6,17 +6,15 @@ import { CollectionSlider } from '../../../shared/data/slider';
   templateUrl: './collection.component.html',
   styleUrls: ['./collection.component.scss']
 })
+
 export class CollectionComponent implements OnInit {
 
+  public CollectionSliderConfig: any = CollectionSlider;
   @Input() categories: any[];
   @Input() category: string;
   @Input() class: string;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
-   public CollectionSliderConfig: any = CollectionSlider;
-
+  ngOnInit(): void { }
 }

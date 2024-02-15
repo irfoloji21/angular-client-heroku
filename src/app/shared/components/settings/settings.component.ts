@@ -5,6 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { ProductService } from "../../services/product.service";
 import { Product } from "../../classes/product";
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { GoogletranslateService } from '../../services/googletranslate.service';
+import { GoogleObj } from '../../classes/solution';
 
 @Component({
   selector: 'app-settings',
@@ -12,7 +14,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
-
+  private translateBtn: any;
   searchForm: FormGroup;
   public products: Product[] = [];
   public search: boolean = false;
@@ -21,12 +23,26 @@ export class SettingsComponent implements OnInit {
   public languages = [
     {
       name: 'English',
-      code: 'en'
+      code: 'en',
+      flag: 'assets/images/icon/LanguageEn.png'
     }, {
       name: 'French',
-      code: 'fr'
+      code: 'fr',
+      flag: 'assets/images/icon/LanguageFr.png'
+    }
+    , {
+      name: 'Turkish',
+      code: 'tr',
+      flag: 'assets/images/icon/LanguageTr.png'
     }
   ];
+  public selectedLanguage: any = this.languages[0];
+
+  getFlagForCurrentLanguage(): string {
+    return this.selectedLanguage.flag;
+  }
+
+
 
   public currencies = [
     {
@@ -49,27 +65,43 @@ export class SettingsComponent implements OnInit {
   ]
 
   constructor(
-    @Inject(PLATFORM_ID) 
+    @Inject(PLATFORM_ID)
     private platformId: Object,
     private translate: TranslateService,
     public productService: ProductService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private google: GoogletranslateService
   ) {
     this.searchForm = this.formBuilder.group({
       search: [''],
     });
-    this.productService.cartItems.subscribe(response => {
-      // console.log(response, "search")
-      this.products = response});
   }
 
   ngOnInit(): void {
+    this.productService.cartItems.subscribe(response => {
+      this.products = response
+    });
+
     this.getSearch();
+
+    this.translateBtn = document.getElementById('translatebtn');
+    if (!this.translateBtn) {
+      console.error('translateBtn is null!');
+      return;
+    }
   }
 
+  changeLanguage(code) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.translate.use(code)
+      // Flag 
+      this.selectedLanguage = this.languages.find(lang => lang.code === code);
+    }
+
+
+  }
   getSearch() {
     const productSearch = this.searchForm.value.search;
-    // console.log(productSearch)
   }
 
   searchToggle() {
@@ -84,11 +116,6 @@ export class SettingsComponent implements OnInit {
   }
 
 
-  changeLanguage(code) {
-    if (isPlatformBrowser(this.platformId)) {
-      this.translate.use(code)
-    }
-  }
 
   get getTotal(): Observable<number> {
     return this.productService.cartTotalAmount();
@@ -101,5 +128,40 @@ export class SettingsComponent implements OnInit {
   changeCurrency(currency: any) {
     this.productService.Currency = currency
   }
+
+
+
+
+
+
+
+  send() {
+    const translateBtn = document.getElementById('translatebtn') as HTMLButtonElement;
+
+    if (!translateBtn) {
+      console.error('translateBtn is null!');
+      return;
+    }
+
+    const googleObj: GoogleObj = {
+      q: 'hello',
+      target: 'es'
+    };
+
+    translateBtn.disabled = true;
+
+    this.google.translate(googleObj).subscribe(
+      (res: any) => {
+        translateBtn.disabled = false;
+      },
+      err => {
+      }
+    );
+  }
+
+
+
+
+
 
 }

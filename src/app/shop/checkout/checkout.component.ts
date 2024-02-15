@@ -16,7 +16,6 @@ import { ShippingService } from 'src/app/shared/services/shipping.service';
 })
 
 export class CheckoutComponent implements OnInit {
-
   public checkoutForm: UntypedFormGroup;
   public products: Product[] = [];
   public payPalConfig?: any;
@@ -26,18 +25,18 @@ export class CheckoutComponent implements OnInit {
   currentStep: string = 'adres';
   buttonText: string = 'Save and Continue';
   showPaymentButton: boolean = true;
-  paymentInfoVisible: boolean = false; // Başlangıçta ödeme bilgileri gizlenmiş
+  paymentInfoVisible: boolean = false; 
 
-  paymentOptions: any[] = [  // Örnek ödeme seçenekleri
+  paymentOptions: any[] = [  
     { name: 'Kredi Kartı', price: 0 },
     { name: 'PayPal', price: 2.99 },
   ];
 
-  cartItems: any[] = [  // Örnek sepet bilgileri
+  cartItems: any[] = [ 
     { productName: 'Ürün 1', quantity: 2, totalPrice: 49.99 },
     { productName: 'Ürün 2', quantity: 1, totalPrice: 29.99 },
   ];
-  
+
   constructor(
     private fb: UntypedFormBuilder,
     public productService: ProductService,
@@ -61,7 +60,6 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.cartItems.subscribe(response => {
-      console.log(response, "checkout")
       this.products = response
     });
     this.orderService.getSelectedAddress();
@@ -82,29 +80,13 @@ export class CheckoutComponent implements OnInit {
         var stripeToken = token.id;
 
         var order = {
-          // firstname: this.checkoutForm.get('firstname')?.value,
-          // lastname: this.checkoutForm.get('lastname')?.value,
-          // phone: this.checkoutForm.get('phone')?.value,
-          // email: this.checkoutForm.get('email')?.value,
-          // address: this.checkoutForm.get('address')?.value,
-          // country: this.checkoutForm.get('country')?.value,
-          // town: this.checkoutForm.get('town')?.value,
-          // state: this.checkoutForm.get('state')?.value,
-          // postalcode: this.checkoutForm.get('postalcode')?.value,
-          // amount: this.checkoutForm.get('amount')?.value,
         };
 
 
         this.toasts.success('The payoff is successful');
       }
     });
-    // Ödeme penceresini aç
-    // handler.open({
-    //   name: 'Mese soft',
-    //   description: 'Mese Store',
-    //   amount: this.amount,
-    //   email: this.checkoutForm.get('email')?.value
-    // });
+
   }
 
   // Paypal Payment Gateway
@@ -163,21 +145,20 @@ export class CheckoutComponent implements OnInit {
   }
 
   showPaymentInfo() {
-    this.paymentInfoVisible = true; // Tab'a tıklandığında ödeme bilgilerini göster
+    this.paymentInfoVisible = true; 
   }
 
   proceedToNextStep() {
     if (this.currentStep === 'adres') {
-      // Adres işlemi başarılıysa bir sonraki adıma geç
       const deliverySuccess = true;
       if (deliverySuccess) {
         if (!this.orderService.getSelectedAddress()) {
           this.toasts.error('Lütfen bir teslimat adresi seçin.');
-          return; // Uyarı verip işlemi durdur
+          return; 
         }
         if (!this.shippingService.getSelectedShipping()) {
           this.toasts.error('Lütfen bir teslimat yöntemi seçin.');
-          return; // Uyarı verip işlemi durdur
+          return; 
         }
         this.currentStep = 'checkout';
         this.buttonText = 'Save and Continue';
@@ -187,7 +168,6 @@ export class CheckoutComponent implements OnInit {
         alert('Adres kaydedilemedi! Lütfen tekrar deneyin.');
       }
     } else if (this.currentStep === 'checkout') {
-      // Checkout işlemi başarılıysa bir sonraki adıma geç
       const checkoutSuccess = true;
       if (checkoutSuccess) {
         this.currentStep = 'odeme';
@@ -199,7 +179,6 @@ export class CheckoutComponent implements OnInit {
         alert('Checkout başarılı olmadı! Lütfen tekrar deneyin.');
       }
     } else if (this.currentStep === 'odeme') {
-      // Ödeme işlemi başarılıysa bir sonraki adıma geç
       const paymentSuccess = true;
       if (paymentSuccess) {
         alert('Ödeme başarıyla tamamlandı!');
@@ -218,7 +197,6 @@ export class CheckoutComponent implements OnInit {
       this.buttonText = 'Save and Continue';
       this.showPaymentButton = true;
     }
-    // Diğer adımlar için gerekli kontrolleri ekleyebilirsiniz.
   }
 
 }

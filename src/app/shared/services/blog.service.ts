@@ -5,8 +5,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class BlogService {
-  private apiUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com/api/v2/blog';
+  private apiUrl = 'http://localhost:8000/api/v2/blog';
 
   constructor(private http: HttpClient) { }
 
@@ -47,5 +48,5 @@ export class BlogService {
     const url = `${this.apiUrl}/unlike-blog/${blogId}`;
     return this.http.put<any>(url, { user });
   }
-  
+
 }

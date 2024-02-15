@@ -14,6 +14,7 @@ export class CouponComponent {
   public active = 1;
   isModalOpen: boolean = false;
   selectedCoupon: any;
+  public loading: boolean = true;
 
   constructor(
     private authService: AuthService,
@@ -23,24 +24,27 @@ export class CouponComponent {
 
   ngOnInit(): void {
     this.getCouponss();
-    console.log(this.coupons[0].end_date)
   }
 
-  getCouponss() {
-    this.authService.loadUser().subscribe((res) => {
+  async getCouponss() {
+    try {
+      this.loading = true;
+  
+      const res = await this.authService.loadUser().toPromise();
+  
       for (let a = 0; a < res.user.coupons.length; a++) {
-        this.couponService
+        const couponRes = await this.couponService
           .getCouponById(res.user.coupons[a].couponID)
-          .subscribe((res) => {
-            console.log(res , "enver1")
-            this.coupons[a] = res.couponCode;
-          });
-          console.log(this.coupons , "enver2")
-
+          .toPromise();
+        this.coupons[a] = couponRes.couponCode;
       }
-     });
+    } catch (error) {
+      console.error(error);
+    } finally {
+      this.loading = false; 
+    }
   }
-
+  
   openModal(coupon: any) {
     this.isModalOpen = true;
     this.selectedCoupon = coupon;
@@ -67,17 +71,17 @@ export class CouponComponent {
 
   getMonthName(monthNumber: number): string {
     const monthNames = [
-      'January', 
-      'February', 
-      'March', 
-      'April', 
-      'May', 
-      'June', 
-      'July', 
-      'August', 
-      'September', 
-      'October', 
-      'November', 
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
       'December'
     ];
 

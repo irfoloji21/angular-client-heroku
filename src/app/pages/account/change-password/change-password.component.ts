@@ -42,9 +42,9 @@ export class ChangePasswordComponent implements OnInit {
       const hasSpecialCharacter = /[!@#$%^&*()_+[\]{};':"\\|,.<>/?-]/.test(newPassword);
 
       if (hasUppercase && hasSpecialCharacter) {
-        return null; // Şifre gereksinimlerini karşılıyor.
+        return null;
       } else {
-        return { passwordInvalid: true }; // Şifre gereksinimlerini karşılamıyor.
+        return { passwordInvalid: true }; 
       }
     };
   }
@@ -80,7 +80,7 @@ export class ChangePasswordComponent implements OnInit {
               )
             }
           );
-        this.router.navigate(['/pages/dashboard']);
+        this.router.navigate(['/dashboard']);
       } else {
         this.passwordForm.setErrors({ passwordMismatch: true });
       }

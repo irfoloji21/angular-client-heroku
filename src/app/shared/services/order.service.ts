@@ -10,9 +10,10 @@ const state = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class OrderService {
   selectedAddress: any;
-  public apiUrl = "https://murmuring-spire-62571-4282a89100f1.herokuapp.com/api/v2"
+  public apiUrl = "http://localhost:8000/api/v2"
 
   constructor(private router: Router, private http: HttpClient) { }
 
@@ -49,17 +50,11 @@ export class OrderService {
       localStorage.setItem('checkoutItems', JSON.stringify(item));
       localStorage.removeItem('cartItems');
 
-      console.log(item.shippingDetails, "details PaymentData")
-      console.log(item.product, "amount PaymentData")
-      console.log(item.orderId, "details PaymentData")
-      console.log(item.totalAmount, "details PaymentData")
-
-      this.router.navigate(['/pages/order/success', orderId]);
+      this.router.navigate(['/order/success', orderId]);
 
       return new Observable((observer) => {
         observer.next({ message: 'Ödeme başarılı' });
         observer.complete();
-        console.log(orderId, "orderId")
       });
 
     } else {
@@ -78,7 +73,7 @@ export class OrderService {
   }
 
   public refundOrder(orderId: string): Observable<any> {
-    const refundData = { status: 'Refund Success' }; // İade başarılı olduğunda gönderilen durum
+    const refundData = { status: 'Refund Success' };
     return this.http.put<any>(`${this.apiUrl}/order/order-refund-success/${orderId}`, refundData);
   }
 

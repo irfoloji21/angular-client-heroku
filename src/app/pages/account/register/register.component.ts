@@ -15,9 +15,9 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder, 
-    private authService: AuthService, 
-    private router: Router, 
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
     private toasts: ToastrService
   ) { }
 
@@ -37,9 +37,9 @@ export class RegisterComponent implements OnInit {
       const hasSpecialCharacter = /[!@#$%^&*()_+[\]{};':"\\|,.<>/?-]/.test(newPassword);
 
       if (hasUppercase && hasSpecialCharacter) {
-        return null; // Şifre gereksinimlerini karşılıyor.
+        return null; 
       } else {
-        return { passwordInvalid: true }; // Şifre gereksinimlerini karşılamıyor.
+        return { passwordInvalid: true };
       }
     };
   }
@@ -47,7 +47,6 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     if (this.registerForm.valid) {
       const formData = this.registerForm.value;
-      console.log(formData, "formData");
 
       const headers = new HttpHeaders({
         'Content-Type': 'application/json',
@@ -57,11 +56,10 @@ export class RegisterComponent implements OnInit {
         headers,
         withCredentials: true,
       };
-      
+
       this.authService.register(formData.firstName, formData.lastName, formData.email, formData.password).subscribe(
         (user) => {
           if (user.success) {
-            console.log("register success", user);
             this.authService.setUserId(user._id);
             this.toasts.success(' mailinize gelen doğrulamayı yapın.', 'Kayıt başarılı',
 
@@ -72,7 +70,7 @@ export class RegisterComponent implements OnInit {
                 newestOnTop: false,
                 progressBar: true,
               })
-            this.router.navigate(['/pages/login'], { state: formData });
+            this.router.navigate(['/login'], { state: formData });
           }
           else {
             console.error("error");

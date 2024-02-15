@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'; // Koleksiyon modelinize uygun yol
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class KoleksiyonService {
-    public apiUrl = "https://murmuring-spire-62571-4282a89100f1.herokuapp.com/api/v2"
+  public apiUrl = "http://localhost:8000/api/v2"
 
   constructor(private http: HttpClient) { }
 

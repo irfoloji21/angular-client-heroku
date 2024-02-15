@@ -22,9 +22,9 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.serviceAuth.loadUser().subscribe(res => {
-      this.userInf = res.user ; 
+      this.userInf = res.user;
       this.userInitials = this.getInitials(this.userInf.firstName, this.userInf.lastName, this.userInf.email, this.userInf.phoneNumber);
-     })
+    })
     this.updateForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -39,20 +39,18 @@ export class ProfileComponent implements OnInit {
 
   onSubmit() {
     const formData = this.updateForm.value;
-    console.log(formData , "formData")
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
 
     const requestOptions = {
       headers,
-      withCredentials: true, 
+      withCredentials: true,
     };
 
     this.serviceAuth.updateUser(formData).subscribe(
       (user) => {
-        if(user.success) {
-          console.log("update success", user);
+        if (user.success) {
         }
         else {
           console.error("error");

@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
-  private apiUrl = 'https://murmuring-spire-62571-4282a89100f1.herokuapp.com/api/v2';
+  private apiUrl = 'http://localhost:8000/api/v2';
   private userId: string | null = null;
   private user: any;
   private isLoggedInSubject = new BehaviorSubject<boolean>(false);
+  private usedCoupons: Set<string> = new Set();
 
   isLoggedIn$ = this.isLoggedInSubject.asObservable();
 
@@ -29,6 +32,12 @@ export class AuthService {
         if (user.success) {
           localStorage.setItem('isLoggedIn', 'true');
           this.isLoggedInSubject.next(true);
+          const userCoupon = user.coupon;
+
+          if (userCoupon && !this.usedCoupons.has(userCoupon)) {
+            this.usedCoupons.add(userCoupon);
+          } else {
+          }
         } else {
           this.isLoggedInSubject.next(false);
         }
@@ -43,7 +52,7 @@ export class AuthService {
       { headers, withCredentials: true }
     );
   }
-  
+
   deleteUserAddress(addressId: string): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.delete<any>(`${this.apiUrl}/user/delete-user-address/${addressId}`, { headers, withCredentials: true });
@@ -64,11 +73,9 @@ export class AuthService {
 
   setUserId(userId: string) {
     this.userId = userId;
-    console.log("user id setUserId", userId);
   }
 
   getUserId(): string | null {
-    console.log("user id getUserId", this.userId);
     return this.userId;
   }
 
@@ -90,7 +97,7 @@ export class AuthService {
   setUser(user: any): void {
     this.user = user;
   }
-  
+
   getUser(): any {
     return this.user;
   }
@@ -104,8 +111,7 @@ export class AuthService {
     return this.http.put(`${this.apiUrl}/user/update-user-password`, { oldPassword, newPassword, confirmPassword }, { headers, withCredentials: true });
   }
 
-  updateUser(userInfo: any, ): Observable<any> {
-    // Kullanıcı bilgilerini güncellemek için API'ye istek gönder
+  updateUser(userInfo: any,): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.put<any>(`${this.apiUrl}/user/update-user-info`, userInfo, { headers, withCredentials: true });
   }

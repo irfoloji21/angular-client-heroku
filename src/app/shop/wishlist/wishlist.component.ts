@@ -12,9 +12,11 @@ export class WishlistComponent implements OnInit {
 
   public products: Product[] = [];
 
-  constructor(private router: Router, 
+  constructor(private router: Router,
     public productService: ProductService) {
     this.productService.wishlistItems.subscribe(response => this.products = response);
+    console.log(this.products);
+    
   }
 
   ngOnInit(): void {
@@ -22,7 +24,7 @@ export class WishlistComponent implements OnInit {
 
   async addToCart(product: any) {
     const status = await this.productService.addToCart(product);
-    if(status) {
+    if (status) {
       this.router.navigate(['/shop/cart']);
       this.removeItem(product);
     }

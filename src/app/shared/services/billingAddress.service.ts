@@ -5,10 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class BillingAddressService {
 
-  private apiUrl = 'assets/data/billingAdress.json'; // JSON dosyasının yolu
-    
+  private apiUrl = 'assets/data/billingAdress.json'; 
+
   constructor(private http: HttpClient) { }
 
   getBillingAddressData(): Observable<any[]> {
@@ -19,7 +20,7 @@ export class BillingAddressService {
     if (billingAddress && Object.keys(billingAddress).length !== 0) {
       localStorage.setItem('selectedBillingAddress', JSON.stringify(billingAddress));
     } else {
-      localStorage.removeItem('selectedBillingAddress'); // ya da varsayılan bir değer atanabilir
+      localStorage.removeItem('selectedBillingAddress'); 
     }
   }
 }
