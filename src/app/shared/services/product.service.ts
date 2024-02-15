@@ -25,7 +25,7 @@ export class ProductService {
   private wishlist: Product[] = state.wishlist;
   private wishlistSubject: BehaviorSubject<number> = new BehaviorSubject(this.wishlist.length);
 
-  public apiUrl = "http://localhost:8000/api/v2"
+  public apiUrl = "https://mesesoft-backend-2ccb39a272e8.herokuapp.com/api/v2"
 
   constructor(
     private http: HttpClient,

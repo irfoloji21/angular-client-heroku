@@ -9,7 +9,7 @@ import { CouponCode } from '../classes/coupon';
 
 export class CouponService {
 
-  private baseUrl = 'http://localhost:8000/api/v2';
+  private baseUrl = 'https://mesesoft-backend-2ccb39a272e8.herokuapp.com/api/v2';
 
   constructor(private http: HttpClient) { }
 
